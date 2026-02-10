@@ -1,5 +1,4 @@
-from fastapi import APIRouter, Path, HTTPException
-from typing import List
+from fastapi import APIRouter, HTTPException
 from models import Patient, Therapist, Patient_Therapist_Association
 from schemas import PatientTherapistLink
 from dependencies import db_dependency

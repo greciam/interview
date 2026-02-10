@@ -18,7 +18,7 @@ def get_patients_by_id(db: db_dependency, patient_id: int = Path(gt=0)):
           return db_patient
      raise HTTPException(status_code=404, detail="Patient not found")
 
-@router.post("/")
+@router.post("/", response_model=PatientRead)
 def create_patient(db: db_dependency, patient: PatientCreate):
      db_patient = Patient(**patient.model_dump())
      db.add(db_patient)
