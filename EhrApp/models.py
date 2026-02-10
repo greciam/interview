@@ -8,7 +8,7 @@ class Patient_Therapist_Association(Base):
     therapist_id = Column(ForeignKey("therapist.id"), primary_key=True)
 
 class Therapist(Base):
-    __tablename__ = 'therapist'
+    __tablename__ = "therapist"
     id = Column(Integer, primary_key=True, index=True)
     first_name = Column(String, index=True)
     last_name = Column(String, index=True)
@@ -16,7 +16,7 @@ class Therapist(Base):
     patients = relationship("Patient", secondary="patient_therapist", back_populates="therapists")
 
 class Patient(Base):
-    __tablename__ = 'patient'
+    __tablename__ = "patient"
     id = Column(Integer, primary_key=True, index=True)
     first_name = Column(String, index=True)
     last_name = Column(String, index=True)

@@ -15,12 +15,6 @@ class PatientBase(BaseModel):
     first_name: str
     last_name: str
 
-class PatientCreate(PatientBase):
-    pass 
-
-class TherapistCreate(TherapistBase):
-    pass
-
 class PatientResponse(PatientBase):
     id: int
     class Config:
@@ -30,6 +24,12 @@ class TherapistResponse(TherapistBase):
     id: int
     class Config:
         from_attributes = True
+
+class PatientCreate(PatientBase):
+    pass 
+
+class TherapistCreate(TherapistBase):
+    pass
 
 class PatientRead(PatientResponse):
     therapists: List[TherapistResponse]
